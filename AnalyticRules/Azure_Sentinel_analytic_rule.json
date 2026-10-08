@@ -18,7 +18,7 @@
                 "description": "Test sentinel",
                 "severity": "Medium",
                 "enabled": true,
-                "query": "SecurityEvent | where EventID in (4625)",
+                "query": "SecurityEvent | where EventID in (4624,4625)",
                 "queryFrequency": "PT5H",
                 "queryPeriod": "PT5H",
                 "triggerOperator": "GreaterThan",
