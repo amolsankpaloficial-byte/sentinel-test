@@ -1,4 +1,4 @@
-name: Deploy Sentinel
+name: Deploy Sentinel Rule
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  login-test:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,5 +23,9 @@ jobs:
               "tenantId":"${{ secrets.AZURE_TENANT_ID }}"
             }
 
-      - name: Verify Azure Login
-        run: az account show
+      - name: Deploy Analytics Rule
+        run: |
+          az deployment group create \
+            --resource-group AmolRG \
+            --template-file AnalyticRules/Azure_Sentinel_analytic_rule.json \
+            --parameters workspace=Amol-Sentinel
