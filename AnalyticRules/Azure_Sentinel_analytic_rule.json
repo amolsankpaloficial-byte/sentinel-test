@@ -14,7 +14,7 @@
             "kind": "Scheduled",
             "apiVersion": "2023-12-01-preview",
             "properties": {
-                "displayName": "Test sentinel",
+                "displayName": "Test sentinel 2",
                 "description": "Test sentinel",
                 "severity": "Medium",
                 "enabled": true,
